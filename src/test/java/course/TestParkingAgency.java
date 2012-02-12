@@ -19,7 +19,7 @@ public class TestParkingAgency {
         for (int i = 0; i < 2; i++) {
             parkingLots.add(new ParkingLot(2));
         }
-        parkingAgency = new ParkingAgency(parkingLots);
+        parkingAgency = new ParkingAgency(parkingLots, new ParkingChooser());
     }
 
     @Test

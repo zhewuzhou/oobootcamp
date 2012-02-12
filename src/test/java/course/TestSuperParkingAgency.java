@@ -20,10 +20,10 @@ public class TestSuperParkingAgency {
         parkingLots.add(parkingLotLow);
         parkingLots.add(parkingLotHigh);
 
-        SuperParkingAgency superParkingAgency = new SuperParkingAgency(parkingLots);
+        ParkingAgency parkingAgency = new ParkingAgency(parkingLots, new SuperChooser());
 
         Car second = new Car();
-        superParkingAgency.park(second);
+        parkingAgency.park(second);
 
         assertThat(parkingLotHigh.idleSpace(), is(1));
     }

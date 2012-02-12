@@ -17,9 +17,9 @@ public class TestSeniorParkingAgency {
         parkingLotList.add(new ParkingLot(3));
         parkingLotList.add(parkingLotB);
         Car car = new Car();
-        SeniorParkingAgency seniorParkingAgency = new SeniorParkingAgency(parkingLotList);
+        ParkingAgency parkingAgency = new ParkingAgency(parkingLotList, new SeniorChooser());
 
-        seniorParkingAgency.park(car);
+        parkingAgency.park(car);
         assertThat(parkingLotB.idleSpace(), is(3));
     }
 }
