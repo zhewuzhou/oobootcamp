@@ -5,13 +5,13 @@ import java.util.List;
 public class ParkingChooser implements Chooser{
 
     public ParkingLot getParkingLot(List<ParkingLot> parkingLotList) {
-        ParkingLot parkingLot1 = null;
+        ParkingLot idleParkinglot = null;
         for (ParkingLot parkingLot : parkingLotList) {
             if (parkingLot.idleSpace() > 0) {
-                parkingLot1 = parkingLot;
+                idleParkinglot = parkingLot;
                 break;
             }
         }
-        return parkingLot1;
+        return idleParkinglot;
     }
 }
