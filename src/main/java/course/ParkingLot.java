@@ -6,10 +6,6 @@ import java.util.List;
 public class ParkingLot {
     private List<ParkingSpace> parkingSpaces;
 
-    public ParkingLot(List<ParkingSpace> parkingSpaces) {
-        this.parkingSpaces = parkingSpaces;
-    }
-
     public ParkingLot(int num) {
         List<ParkingSpace> parkingSpaces = new ArrayList<ParkingSpace>();
         for(int i=0; i<num; i++){
