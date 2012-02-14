@@ -13,7 +13,7 @@ public class ParkingSpace {
     }
 
     public ParkingTicket park(Car car) {
-        if (isIdle() == true) {
+        if (isIdle()) {
             this.car = car;
             this.parkingTicket = new ParkingTicket();
             return parkingTicket;

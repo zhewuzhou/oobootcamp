@@ -11,20 +11,20 @@ import static org.hamcrest.core.Is.is;
 public class TestSuperParkingAgency {
     @Test
     public void test_should_park_car_to_bigger_volum_percentage(){
-        List<ParkingLot> parkingLots = new ArrayList<ParkingLot>();
-        ParkingLot parkingLotLow = new ParkingLot(10);
+        List<ParkingFacilitator> parkingFacilitators = new ArrayList<ParkingFacilitator>();
+        ParkingFacilitator parkingFacilitatorLow = new ParkingLot(10);
         Car first = new Car();
-        parkingLotLow.park(first);
-        ParkingLot parkingLotHigh = new ParkingLot(2);
+        parkingFacilitatorLow.park(first);
+        ParkingFacilitator parkingFacilitatorHigh = new ParkingLot(2);
 
-        parkingLots.add(parkingLotLow);
-        parkingLots.add(parkingLotHigh);
+        parkingFacilitators.add(parkingFacilitatorLow);
+        parkingFacilitators.add(parkingFacilitatorHigh);
 
-        ParkingAgency parkingAgency = new ParkingAgency(parkingLots, new SuperChooser());
+        ParkingAgency parkingAgency = new ParkingAgency(parkingFacilitators, new SuperChooser());
 
         Car second = new Car();
         parkingAgency.park(second);
 
-        assertThat(parkingLotHigh.idleSpace(), is(1));
+        assertThat(parkingFacilitatorHigh.idleSpace(), is(1));
     }
 }

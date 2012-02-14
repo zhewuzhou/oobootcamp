@@ -3,13 +3,13 @@ package course;
 import java.util.List;
 
 public class SeniorChooser implements Chooser{
-    public ParkingLot getParkingLot(List<ParkingLot> parkingLotList) {
-        ParkingLot maxParkingLot = null;
-        for (ParkingLot parkingLot : parkingLotList) {
-            if (maxParkingLot==null || parkingLot.idleSpace() > maxParkingLot.idleSpace()) {
-                maxParkingLot = parkingLot;
+    public ParkingFacilitator getParkingLot(List<ParkingFacilitator> parkingFacilitatorList) {
+        ParkingFacilitator maxParkingFacilitator = null;
+        for (ParkingFacilitator parkingFacilitator : parkingFacilitatorList) {
+            if (maxParkingFacilitator ==null || parkingFacilitator.idleSpace() > maxParkingFacilitator.idleSpace()) {
+                maxParkingFacilitator = parkingFacilitator;
             }
         }
-        return maxParkingLot;
+        return maxParkingFacilitator;
     }
 }

@@ -4,11 +4,11 @@ import java.util.List;
 
 public class ParkingChooser implements Chooser{
 
-    public ParkingLot getParkingLot(List<ParkingLot> parkingLotList) {
-        ParkingLot idleParkinglot = null;
-        for (ParkingLot parkingLot : parkingLotList) {
-            if (parkingLot.idleSpace() > 0) {
-                idleParkinglot = parkingLot;
+    public ParkingFacilitator getParkingLot(List<ParkingFacilitator> parkingFacilitatorList) {
+        ParkingFacilitator idleParkinglot = null;
+        for (ParkingFacilitator parkingFacilitator : parkingFacilitatorList) {
+            if (parkingFacilitator.idleSpace() > 0) {
+                idleParkinglot = parkingFacilitator;
                 break;
             }
         }

@@ -3,13 +3,13 @@ package course;
 import java.util.List;
 
 public class SuperChooser implements Chooser{
-    public ParkingLot getParkingLot(List<ParkingLot> parkingLotList) {
-        ParkingLot maxParkingLot = null;
-        for (ParkingLot parkingLot : parkingLotList) {
-            if (maxParkingLot==null || parkingLot.volumPercentage() > maxParkingLot.volumPercentage()) {
-                maxParkingLot = parkingLot;
+    public ParkingFacilitator getParkingLot(List<ParkingFacilitator> parkingFacilitatorList) {
+        ParkingFacilitator maxParkingFacilitator = null;
+        for (ParkingFacilitator parkingFacilitator : parkingFacilitatorList) {
+            if (maxParkingFacilitator ==null || parkingFacilitator.volumPercentage() > maxParkingFacilitator.volumPercentage()) {
+                maxParkingFacilitator = parkingFacilitator;
             }
         }
-        return maxParkingLot;
+        return maxParkingFacilitator;
     }
 }

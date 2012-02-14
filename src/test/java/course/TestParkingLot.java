@@ -59,8 +59,8 @@ public class TestParkingLot {
 
     @Test
     public void test_should_create_by_num_of_parkingspace() {
-        ParkingLot myParkingLot = new ParkingLot(3);
-        assertThat(myParkingLot.idleSpace(), is(3));
+        ParkingFacilitator myParkingFacilitator = new ParkingLot(3);
+        assertThat(myParkingFacilitator.idleSpace(), is(3));
     }
 
     @Test
@@ -73,5 +73,13 @@ public class TestParkingLot {
         Car car = new Car();
         parkingLot.park(car);
         assertEquals(0.5, parkingLot.volumPercentage(), 0.01);
+    }
+
+    @Test
+    public void test_should_report() throws Exception {
+        parkingLot.park(new Car());
+        assertThat(parkingLot.report(""), is("parkingLot\n  1/2"));
+        assertThat(parkingLot.report("  "), is("  parkingLot\n    1/2"));
+
     }
 }

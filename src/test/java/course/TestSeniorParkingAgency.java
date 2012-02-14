@@ -12,14 +12,14 @@ import static org.junit.Assert.assertThat;
 public class TestSeniorParkingAgency {
     @Test
     public void test_should_park_car_to_more_idle_space_parkinglot() {
-        ParkingLot parkingLotB = new ParkingLot(4);
-        List<ParkingLot> parkingLotList = new ArrayList<ParkingLot>();
-        parkingLotList.add(new ParkingLot(3));
-        parkingLotList.add(parkingLotB);
+        ParkingFacilitator parkingFacilitatorB = new ParkingLot(4);
+        List<ParkingFacilitator> parkingFacilitatorList = new ArrayList<ParkingFacilitator>();
+        parkingFacilitatorList.add(new ParkingLot(3));
+        parkingFacilitatorList.add(parkingFacilitatorB);
         Car car = new Car();
-        ParkingAgency parkingAgency = new ParkingAgency(parkingLotList, new SeniorChooser());
+        ParkingAgency parkingAgency = new ParkingAgency(parkingFacilitatorList, new SeniorChooser());
 
         parkingAgency.park(car);
-        assertThat(parkingLotB.idleSpace(), is(3));
+        assertThat(parkingFacilitatorB.idleSpace(), is(3));
     }
 }

@@ -3,7 +3,7 @@ package course;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ParkingLot {
+public class ParkingLot implements ParkingFacilitator {
     private List<ParkingSpace> parkingSpaces;
 
     public ParkingLot(int num) {
@@ -54,5 +54,10 @@ public class ParkingLot {
 
     public double volumPercentage() {
         return (float)((1.0*idleSpace())/parkingSpaces.size());
+    }
+
+
+    public String report(String spaces) {
+        return spaces + "parkingLot\n  " + spaces +idleSpace()+"/" + parkingSpaces.size();
     }
 }

@@ -6,6 +6,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertThat;
 
@@ -15,11 +16,11 @@ public class TestParkingAgency {
 
     @Before
     public void setUp() {
-        List<ParkingLot> parkingLots = new ArrayList<ParkingLot>();
+        List<ParkingFacilitator> parkingFacilitators = new ArrayList<ParkingFacilitator>();
         for (int i = 0; i < 2; i++) {
-            parkingLots.add(new ParkingLot(2));
+            parkingFacilitators.add(new ParkingLot(2));
         }
-        parkingAgency = new ParkingAgency(parkingLots, new ParkingChooser());
+        parkingAgency = new ParkingAgency(parkingFacilitators, new ParkingChooser());
     }
 
     @Test
@@ -30,5 +31,12 @@ public class TestParkingAgency {
     @Test
     public void test_should_not_park_car_given_no_parkingspace() {
 
+    }
+
+    @Test
+    public void test_should_report() throws Exception {
+        parkingAgency.park(new Car());
+        assertThat(parkingAgency.report(""), is("parkingAgency\n  parkingLot\n    1/2\n  parkingLot\n    2/2"));
+        assertThat(parkingAgency.report("  "), is("parkingAgency\n    parkingLot\n      1/2\n    parkingLot\n      2/2"));
     }
 }
